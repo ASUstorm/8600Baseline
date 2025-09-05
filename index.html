@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <meta name="author" content="Storm">
+        
+        <meta name="description" content="Keeping the community around 8600 Baseline in Lafayette Colorado informed of the proposed development of 170 new homes along Baseline Road">
+        <meta name="keywords" content="">
+        <meta name="robots" content="index,follow">
+        <title>8600 Baseline Information</title>
+
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link href="https://res.cloudinary.com/dr6lvwubh/raw/upload/v1581441981/Anicons/anicons-regular.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Add a link to your properly named CSS file here -->
+         <link rel="stylesheet" href="styles.css">
+         <script>
+            <? php
+if ($_POST) {
+                    $to = "cynthiastorm@gmail.com";
+                    $subject = "New Contact Form Submission";
+                    $message = "Name: ".$_POST['name']. "\n"
+                        . "Email: ".$_POST['email']. "\n\n"
+                            .$_POST['message'];
+                    $headers = "From: ".$_POST['email'];
+
+                    mail($to, $subject, $message, $headers);
+    echo "Message sent!";
+                }
+?>
+
+         </script>
+    </head>
+
+    <body>
+        <a class="sr-only" href="#main-content">Skip to Main Content</a>
+        <header>
+            <h1>8600 Baseline Information</h1>
+        
+            <nav>
+                <div id="menu-toggle">
+                    <!-- responsive menu code from (with changes made to match mockups): https://css-tricks.com/three-css-alternatives-to-javascript-navigation/ -->
+                    <h2 class="sr-only">Main Navigation</h2>
+                    <!-- hidden but accessible headings from: https://webaim.org/techniques/css/invisiblecontent/ -->
+                    <input name="toggle" id="toggle" type="checkbox">
+                    <label for="toggle"><i class="fa fa-bars"></i></label>
+                    <ul>
+                        <li><a href="#one">Home</a></li>
+                        <li><a href="#two">About</a></li>
+                        <li><a href="#three">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section id="one">
+                <h2>Home</h2>
+                <p>Home</p>
+            </section>
+            <section id="two">
+                <h2>About</h2>
+                <p>For those of us who fought a proposed development several years ago, well, here we go again! For the newer folks, Nyland
+                and the surrounding neighbors banned together, gave a lot of public input, and convinced the planning commission to vote
+                it down in a 7-0 vote. It was a huge success for us as that developer, Reed Phillips, had an option of the property to
+                build 88 units there. This is sooooo much worse. Last time around, Lafayette had a slow growth policy, issuing only a
+                certain number of building permits per year. That’s no longer in place. Some highlights of my conversation with the
+                planner: - 6 acres would be left “open” - 185 units is considered low-to-medium density - The “farmhouse” stays (they
+                have been remodeling it) - Creating housing for people with disabilities is still part of the plan - Some low-income
+                housing may also be part of the plan - The city considers us to be in a housing shortage - Nothing about horses or
+                farming - The owner and developer have requested a pre-application meeting with planners, which has not yet occurred, so
+                they can modify their draft to submit a better application Some thoughts on what our next steps might look like as we
+                organize Nyland and the surrounding area to fight it: - Start with a special meeting here to begin organizing and form a
+                task force ASAP - Connect with the surrounding neighbors (I’ve already been in touch with folks on Snow Peak) - Watch
+                for postcards and signs at the property so we know when the first public meeting will take place, and show up in force
+                for any and all meetings - Give as much input as possible (write letters, attend meetings, etc) during the public input
+                phase - Form an off-natter email group, which I would encourage EVERYONE to join, or agree that it’s ok to use the
+                natter for this purpose It’s up to ALL OF US to work together on this if we’re going to stop it or get it modified to be
+                a smaller project with less impact on this section of Baseline.</p>
+            </section>
+            <section id="three">
+                <h2>Contact</h2>
+                <p>For more information on the 8600 Baseline Development, complete the form below:</p>
+                <form action="sendmail.php" method="post" id="contactForm" aria-labelledby="contactFormHeading">
+                    <label for="name"><span class="required" aria-hidden="true">*</span>Full Name:</label>
+                    <input type="text" id="name" name="name" placeholder="First and Last name" required>
+                    <label for="email"><span class="required" aria-hidden="true">*</span>Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <label for="phone"><span class="required" aria-hidden="true">*</span>Phone Number:</label>
+                    <input type="tel" id="phone" placeholder="Phone Number" name="phone">
+                    <fieldset>
+                        <legend>
+                            <span class="required" aria-hidden="true">*</span> Preferred Contact Method:
+                        </legend>
+                        <input type="radio" id="contactEmail" name="contactMethod" value="email">
+                        <label for="contactEmail">Email</label>
+                        <input type="radio" id="contactPhone" name="contactMethod" value="phone" checked>
+                        <label for="contactPhone"> Phone </label>
+                    </fieldset>
+                    
+                    <label for="message"><span class="required" aria-hidden="true">*</span>Message:</label>
+                    <textarea id="message" name="message" placeholder="Message" required></textarea>
+                    <input type="submit" value="Submit">
+                </form>
+            </section>
+        </main>
+        <footer>
+            <p>Footer</p>
+        </footer>
+    </body>
