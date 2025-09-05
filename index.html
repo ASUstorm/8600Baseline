@@ -17,22 +17,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Add a link to your properly named CSS file here -->
          <link rel="stylesheet" href="styles.css">
-         <script>
-            <? php
-if ($_POST) {
-                    $to = "cynthiastorm@gmail.com";
-                    $subject = "New Contact Form Submission";
-                    $message = "Name: ".$_POST['name']. "\n"
-                        . "Email: ".$_POST['email']. "\n\n"
-                            .$_POST['message'];
-                    $headers = "From: ".$_POST['email'];
-
-                    mail($to, $subject, $message, $headers);
-    echo "Message sent!";
-                }
-?>
-
-         </script>
+         
     </head>
 
     <body>
@@ -40,11 +25,11 @@ if ($_POST) {
         <header>
             <h1>8600 Baseline Information</h1>
         
-            <nav>
+            <!--<nav>
                 <div id="menu-toggle">
-                    <!-- responsive menu code from (with changes made to match mockups): https://css-tricks.com/three-css-alternatives-to-javascript-navigation/ -->
+                    
                     <h2 class="sr-only">Main Navigation</h2>
-                    <!-- hidden but accessible headings from: https://webaim.org/techniques/css/invisiblecontent/ -->
+                    
                     <input name="toggle" id="toggle" type="checkbox">
                     <label for="toggle"><i class="fa fa-bars"></i></label>
                     <ul>
@@ -53,7 +38,7 @@ if ($_POST) {
                         <li><a href="#three">Contact</a></li>
                     </ul>
                 </div>
-            </nav>
+            </nav> -->
         </header>
         <main>
             <section id="one">
@@ -83,7 +68,7 @@ if ($_POST) {
             <section id="three">
                 <h2>Contact</h2>
                 <p>For more information on the 8600 Baseline Development, complete the form below:</p>
-                <form action="sendmail.php" method="post" id="contactForm" aria-labelledby="contactFormHeading">
+                <form action="https://formspree.io/f/xzzakqbe" method="POST" id="contactForm">
                     <label for="name"><span class="required" aria-hidden="true">*</span>Full Name:</label>
                     <input type="text" id="name" name="name" placeholder="First and Last name" required>
                     <label for="email"><span class="required" aria-hidden="true">*</span>Email:</label>
@@ -99,7 +84,15 @@ if ($_POST) {
                         <input type="radio" id="contactPhone" name="contactMethod" value="phone" checked>
                         <label for="contactPhone"> Phone </label>
                     </fieldset>
-                    
+                    <fieldset>
+                        <legend>
+                            <span class="required" aria-hidden="true">*</span> Please add me to the email list for regular updates:
+                        </legend>
+                        <input type="radio" id="subscribeYes" name="subscribe" value="yes" checked>
+                        <label for="subscribeYes">Yes</label>
+                        <input type="radio" id="subscribeNo" name="subscribe" value="no">
+                        <label for="subscribeNo">No</label>
+                    </fieldset>
                     <label for="message"><span class="required" aria-hidden="true">*</span>Message:</label>
                     <textarea id="message" name="message" placeholder="Message" required></textarea>
                     <input type="submit" value="Submit">
