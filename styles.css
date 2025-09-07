@@ -32,7 +32,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 1.5;
 }
 ol, ul {
 	list-style: none;
@@ -67,12 +67,14 @@ table {
     --white     : #fff;
     --light-gray: #eaeaea;
     --dark-gray : #222;
+    --heading-font: "Squanda One", sans-serif;
+    --body-font : "Karla", Helvetica, Arial, sans-serif;
 }
 
 /* ---------- GLOBAL STYLES ---------- */
 * {
     box-sizing : border-box;
-    line-height: 1.35;
+    line-height: 1.5;
 }
 
 
@@ -98,6 +100,9 @@ table {
     body {
         background-color: var(--dark-gray);
         color           : var(--white);
+        font-family     : var(--body-font);
+        font-size       : 16px;
+        line-height: 1.5;
     }
 
     main,
@@ -166,7 +171,7 @@ small {
 main,
 header,
 footer {
-    font-family: sans-serif;
+    font-family: var(--body-font);
     color      : var(--dark-gray);
     width      : 100%;
 }
@@ -176,12 +181,21 @@ footer {
     padding: 1em;
 }
 
+
 footer{
     height: 15vw;
 }
 main {
     max-width: 1795px;
 }
+
+ul.about-list li{
+    list-style-type: disc;
+    margin-left     : 2em;
+    padding         : 0.5em 0;
+
+}
+
 /* ---------- HIDDEN HEADING STYLES ---------- */
 /* FROM: https://webaim.org/techniques/css/invisiblecontent/ */
 .sr-only {
@@ -195,8 +209,7 @@ main {
 
 /* ---------- LINK STYLES ---------- */
 a {
-    display    : block;
-    padding    : 1rem;
+    color          : var(--white);
     font-family: var(--body-font);
 }
 
@@ -439,8 +452,8 @@ input[type="submit"]:focus {
 
 /* ----- CONTAINERS ----- */
 section {
-    margin : 1em 0;
-    padding: 1em;
+    margin : 0;
+    padding: .05em;
 }
 
 /* ---------- EXTRA SMALL SCREEN STYLES ---------- */
@@ -449,17 +462,53 @@ footer {
     background-color: var(--red);
     color           : var(--white);
 }
+    img {
+        display  : inline;
+        min-width: none;
+    }
 
+    header {
+        height               : auto;
+        display              : grid;
+        grid-template-columns: repeat(8, 1fr);
+    }
+
+    .title {
+        font-family: var(--display-font);
+        grid-column: 1/9;
+        grid-row   : 1/1;
+        display    : inline;
+    }
+
+    .intro-text {
+        grid-column: 1/9;
+        grid-row   : 3/4;
+        text-wrap  : wrap;
+        display    : inline;
+    }
+
+    .header-image {
+        grid-column: 1/9;
+        grid-row   : 2/3;
+        max-width  : 100%;
+        display    : inline;
+        text-wrap  : wrap;
+    }
 nav,
 section {
     background-color: var(--blue);
     color           : var(--light-gray);
+    padding: auto;
 }
-
+#one, #two, #three, #four, #five, #six, #seven, #eight {
+    background-color: var(--blue);
+    color           : var(--light-gray);
+    padding         : 1em;
+    margin          : 0;
+}
 img {
     margin : 0.75em 0.75em 0.75em 0;
     display: inline;
-    float  : left;
 }
 
 
@@ -473,39 +522,46 @@ img {
 /* --------------- BEGIN MEDIUM SCREEN SIZES --------------- */
 @media (min-width: 595px) {
 
-    section {
+
+section {
 
         margin: 0;
         padding: 1em;
     }
 
-
-    img {
-        width    : 200px;
-        max-width: 200px;
-    }
-
-
     main {
         display              : grid;
-        grid-gap             : 0.5em;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(12, 1fr);
         margin               : 1em 0;
     }
     #one {
-        grid-column: 1/4;
-        grid-row   : 1/3;
+        grid-column: 1/13;
+        grid-row   : 1/1;
     }
 
     #two {
-        grid-column: 1/2;
-        grid-row   : 3/5;
+        grid-column: 1/6;
+        grid-row   : 2/5;
     }
 
     #three {
-        grid-column: 2/3;
-        grid-row   : 3/5;
+        grid-column: 6/13;
+        grid-row   : 2/5;
     }
+
+    #four {
+        grid-column: 1/13;
+        grid-row   : 5/7;
+    }
+    #five {
+        grid-column: 1/6;
+        grid-row   : 7/9;
+    }
+    #six {
+        grid-column: 6/13;
+        grid-row   : 7/9;
+    }
+
     #toggle,
     #menu-toggle label,
     #menu-toggle input {
@@ -534,7 +590,7 @@ img {
         width                : 100%;
         display              : grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap                  : 1rem;
+        gap                  : 0.5em;
     }
 
     nav li {
@@ -558,24 +614,38 @@ img {
 
 @media (min-width: 995px) {
 
+
+
+header {
+    height               : auto;
+    display              : grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.title {
+    font-family: var(--display-font);
+    grid-column: 1/5;
+    grid-row   : 1/2;
+}
+
+.header-image {
+    grid-column: 4/8;
+    grid-row   : 1/2;
+    display    : inline;
+    max-width: 350px;
+    margin-right: 5px;
+}
+    img {
+        display  : block;
+        min-width: none;
+        height: auto;
+        
+    }
     main {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(12, 1fr);
     }
 
-    #one {
-        grid-column: 1/9;
-        grid-row   : 1/3;
-    }
 
-    #two {
-        grid-column: 1/6;
-        grid-row   : 3/5;
-    }
-
-    #three {
-        grid-column: 6/9;
-        grid-row   : 3/5;
-    }
 
 }
 
@@ -592,25 +662,29 @@ img {
     section {
         background-color: var(--blue);
     }
+    header {
+        height               : auto;
+        display              : grid;
+        grid-template-columns: repeat(8, 1fr);
+    }
 
+    .title {
+        font-family: var(--display-font);
+        grid-column: 1/6;
+        grid-row   : 1/2;
+    }
 
-}
+    .header-image {
+        grid-column: 6/8;
+        grid-row   : 1/2;
+        max-width  : 100%;
+        display    : inline;
+        min-width: 300px;
+    }
+
 
 /* --------------- END LARGE SCREEN SIZES --------------- */
 
-
-
-/* ---------- ADJUSTING RESPONSIVE IMAGE SIZE ---------- */
-/* --------------- BEGIN RESPONSIVE IMAGE ADJUST SIZES --------------- */
-@media screen and (min-width: 1400px) {
-    img {
-        width    : 300px;
-        max-width: 300px;
-    }
-}
-
-
-/* --------------- END RESPONSIVE IMAGE ADJUST SIZES --------------- */
 
 
 
@@ -625,69 +699,49 @@ img {
     }
 
     main {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         margin               : 1em auto;
     }
 
-
+    img {
+        display  : block;
+        max-width: 400px;
+        height   : auto;
+    }
 
     #one {
+        grid-column: 1/9;
+        grid-row: 1/2;
+    }
+
+    #two, #three {
+        grid-row   : 2/3;
+    }
+    #two {
+        grid-column: 1/5;
+    }
+    #three {
+        grid-column: 5/9;
+    }    
+    
+    #four {
+        grid-column: 9/13;
+    }
+
+    #four {
         grid-row: 1/3;
     }
 
-    #one {
-        grid-column: 1/12;
-    }
-
-    #two {
-        grid-column: 1/8;
-        grid-row   : 3/4;
-    }
-
-    #three,
-    #four {
-        grid-column: 8/12;
-    }
-
-    #three {
-        grid-row: 3/4;
-    }
-
-    #four {
-        grid-row: 2/3;
-    }
-
-    #five,
-    #six {
-        grid-column: 1/4;
-    }
 
     #five {
-        grid-row: 3/4;
-    }
-
-    #six {
-        grid-row: 4/5;
-    }
-
-    #seven,
-    #eight {
+        grid-column: 1/6;
         grid-row: 3/5;
     }
 
-    #seven {
-        grid-column: 4/8;
-    }
 
-    #eight {
-        grid-column: 8/12;
-    }
-
-    #three p,
-    #four p,
-    #five p,
-    #six p {
-        padding-top: 2em;
+    #six {
+        grid-row: 3/5;
+        grid-column: 6/13;
     }
 }
 
