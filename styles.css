@@ -137,9 +137,10 @@ h1,h2,h3,h4{
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2.5em;
     margin   : 0.5em 0;
     display  : inline;
+    font-family: var(--heading-font);
 }
 
 h2 {
@@ -474,7 +475,7 @@ footer {
     }
 
     .title {
-        font-family: var(--display-font);
+        font-family: var(--heading-font);
         grid-column: 1/9;
         grid-row   : 1/1;
         display    : inline;
@@ -623,7 +624,7 @@ header {
 }
 
 .title {
-    font-family: var(--display-font);
+    font-family: var(--heading-font);
     grid-column: 1/5;
     grid-row   : 1/2;
 }
@@ -669,7 +670,6 @@ header {
     }
 
     .title {
-        font-family: var(--display-font);
         grid-column: 1/6;
         grid-row   : 1/2;
     }
