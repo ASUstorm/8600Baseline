@@ -638,7 +638,6 @@ header {
 }
     img {
         display  : block;
-        min-width: none;
         height: auto;
         
     }
@@ -705,7 +704,6 @@ header {
 
     img {
         display  : block;
-        max-width: 400px;
         height   : auto;
     }
 
