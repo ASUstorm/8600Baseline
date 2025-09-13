@@ -138,7 +138,7 @@ h1,h2,h3,h4{
 
 h1 {
     font-size: 2.5em;
-    margin   : 0.5em 0;
+    margin   : 0.25em 0;
     display  : inline;
     font-family: var(--heading-font);
 }
@@ -180,15 +180,16 @@ footer {
 header,
 footer {
     padding: 1em;
+    margin: .25em 0em;
 }
 
 
 footer{
-    height: 15vw;
+    height: fit-content;
 }
 main {
-    max-width: 100%;
     background-color: var(--blue);
+    margin: .5em 0;
 }
 
 ul.about-list li{
@@ -325,7 +326,7 @@ nav li {
 }
 /* ---------- Form STYLES ---------- */
 form {
-    width        : 90%;
+    width        : 95%;
     max-width    : 350px;
     margin       : 2em auto;
     padding      : 0.75em;
@@ -504,12 +505,14 @@ section {
 #one, #two, #three, #four, #five, #six, #seven, #eight {
     background-color: transparent;
     color           : var(--light-gray);
-    padding         : 1em 2em 0em;
-    margin          : 0;
+    padding         : 1em;
+    margin          : 0.5em auto;
 }
 img {
-    margin : 0.75em;
+    margin : 0.5em;
     display: inline;
+    padding: 0.5em;
+    width: 95%;
 }
 
 
@@ -521,18 +524,16 @@ img {
 
 /* ---------- MEDIUM SCREEN STYLES ---------- */
 /* --------------- BEGIN MEDIUM SCREEN SIZES --------------- */
-@media (min-width: 595px) {
+@media (min-width: 845px) {
 
 
-section {
 
-        margin: 0;
-    }
     header {
         height               : auto;
         display              : grid;
         grid-template-columns: repeat(8, 1fr);
-        gap: 0.5em;
+        padding-left : 5%;
+        margin: 0.25em 0;
     }
     .header-image {
         max-width: 100%;
@@ -542,21 +543,27 @@ section {
     main {
         display              : inline-grid;
         grid-template-columns: repeat(12, 1fr);
-        gap                  : 0.5em;
+        gap                  : 0.25em;
+        margin: 0.25em 0;
+        padding-left : 5%;
     }
     #one {
         grid-column: 1/13;
         grid-row   : 1/1;
+        padding-right: 50px;
     }
 
     #two {
-        grid-column: 1/7;
+        grid-column: 1 / span 5;
         grid-row   : 2/5;
+        justify-content: center;
     }
 
     #three {
-        grid-column: 7/13;
+        grid-column: 7 / span 5;
         grid-row   : 2/5;
+        justify-content: center;
+
     }
 
     #four {
@@ -655,9 +662,10 @@ section {
         grid-template-columns: repeat(12, 1fr);
         font-size: 1.25em;
     }
-
-
-
+    #four {
+        grid-row   : 5/7;
+        min-height : fit-content;
+    }
 }
 
 
@@ -670,7 +678,7 @@ section {
 
 /* ---------- EXTRA LARGE SCREEN STYLES ---------- */
 /* --------------- BEGIN EXTRA LARGE SCREEN SIZES --------------- */
-@media (min-width: 1440px) {
+@media (min-width: 1452px) {
 
     header,
     footer {
@@ -694,7 +702,7 @@ section {
     main {
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: fit-content (2010px, auto);
-        margin               : 1em auto;
+        margin               : .25em 0;
         grid-auto-flow: row;
         grid-auto-rows: 400px;
     }
@@ -714,6 +722,7 @@ section {
         grid-row   : 2/-1px;
         grid-row-end: auto;
         min-height : fit-content;
+        padding: 1em;
     }
     #two {
         grid-column: 1/5;
@@ -723,8 +732,8 @@ section {
     }    
     
     #four {
-        grid-column: 9/13;
-        grid-row: 1/7;
+        grid-column: 9/12;
+        grid-row: 1/8;
         max-height: fit-content;
     }
 
@@ -739,9 +748,9 @@ section {
 
     #six {
         grid-row: 4 / span 2;
-        grid-column: 6/10;
-        min-height: fit-content;
-                margin-top: 100px;
+        grid-column: 6/9;
+        max-height: fit-content;
+        margin-top: 100px;
     }
 }
 
@@ -750,11 +759,26 @@ section {
         margin-top: 100px;
         min-height    : fit-content;
     }
+    #five {
+        grid-column: 1 / span 4;
+    }
     #six {
-        grid-column: 6 / span 3;
+        grid-column: 5 / span 4;
+    }
+    #contactForm {
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
     }
 }
-
+@media screen  and (min-width: 1660px) {
+    #four, #five, #six{
+        height:max-content;
+        grid-row-end:7;
+        }
+    
+}
 /* --------------- END EXTRA LARGE SCREEN SIZES --------------- */
 
 /*exempting those favicons */

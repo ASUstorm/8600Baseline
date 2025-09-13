@@ -119,15 +119,15 @@
                     <input type="text" id="name" name="name" placeholder="First and Last name" required>
                     <label for="email"><span class="required" aria-hidden="true">*</span>Email:</label>
                     <input type="email" id="email" name="email" placeholder="Email" required autocomplete="email">
-                    <label for="phone"><span class="required" aria-hidden="true">*</span>Phone Number:</label>
-                    <input type="tel" id="phone" placeholder="Phone Number" name="phone" required autocomplete="tel">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" placeholder="Phone Number" name="phone" autocomplete="tel">
                     <fieldset>
                         <legend>
                             <span class="required" aria-hidden="true">*</span> Preferred Contact Method:
                         </legend>
-                        <input type="radio" id="contactEmail" name="contactMethod" value="email">
+                        <input type="radio" id="contactEmail" name="contactMethod" value="email" checked>
                         <label for="contactEmail">Email</label>
-                        <input type="radio" id="contactPhone" name="contactMethod" value="phone" checked>
+                        <input type="radio" id="contactPhone" name="contactMethod" value="phone">
                         <label for="contactPhone"> Phone </label>
                     </fieldset>
                     <fieldset>
@@ -139,13 +139,13 @@
                         <input type="radio" id="subscribeNo" name="subscribe" value="no">
                         <label for="subscribeNo">No</label>
                     </fieldset>
-                    <label for="message"><span class="required" aria-hidden="true">*</span>Message:</label>
-                    <textarea id="message" name="message" placeholder="Message" required></textarea>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" placeholder="Optional Message"></textarea>
                     <input type="submit" value="Submit">
                 </form>
             </section>
         </main>
         <footer>
-            <p>Footer</p>
+            <p>This site has been developed for the purpose of sharing information about the proposed development of 8600 Baseline, located east of the Lafayette water treatment plant between 75th Street and 95th Street. As a grass-roots, community-driven project, we will post updates and share opportunities for public comment as the proposal moves through the City of Lafayette's planning process. This site is not an official City of Lafayette website and is maintained by volunteers.</p>
         </footer>
     </body>
