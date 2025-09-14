@@ -67,7 +67,8 @@ table {
     --white     : #fff;
     --light-gray: #eaeaea;
     --dark-gray : #222;
-    --heading-font: "Squanda One", sans-serif;
+    --heading-font: "Cantora One", 'Times New Roman', serif;
+    --subheading-font: "Philosopher", 'Times New Roman', serif;
     --body-font : "Karla", Helvetica, Arial, sans-serif;
 }
 
@@ -146,6 +147,7 @@ h1 {
 h2 {
     font-size: 1.75em;
     display  : inline;
+    font-family: var(--subheading-font);
 }
 
 /* ----- IMAGES ----- */
@@ -154,7 +156,12 @@ img {
     max-width: 100%;
     margin   : 0.5em 0;
 }
-
+.highlight {
+    font-weight: 700;
+    font-style: italic;
+    color:#e0d69f;
+    text-shadow: 1px 1px 2px #000;
+}
 
 
 
@@ -649,9 +656,9 @@ img {
 .header-image {
     grid-column: 5/9;
     grid-row   : 1/3;
-    max-width  : 500px;
+    max-width  : 800px;
     display    : inline;
-    margin: 0 auto;
+    margin: 6em auto 0;
 }
     img {
         display  : block;
@@ -686,13 +693,7 @@ img {
         padding-left    : 5%;
     }
 
-    .header-image {
-    grid-column: 4/9;
-    grid-row   : 1/3;
-    max-width: 800px;
-    display    : inline;
-    margin     : 0 auto;
-}
+
 .intro-text {
     grid-column: 1/4;
     grid-row   : 2/3;
@@ -710,7 +711,6 @@ img {
     img {
         display  : block;
         height   : auto;
-        max-width: 500px;
     }
 
     #one {
