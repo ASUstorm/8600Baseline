@@ -533,7 +533,9 @@ img {
 /* --------------- BEGIN MEDIUM SCREEN SIZES --------------- */
 @media (min-width: 845px) {
 
-
+    body {
+        font-size: 18px;
+    }
 
     header {
         height               : auto;
