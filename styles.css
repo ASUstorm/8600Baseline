@@ -138,15 +138,24 @@ h1,h2,h3,h4{
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     margin   : 0.25em 0;
     display  : inline;
     font-family: var(--heading-font);
 }
+h1 a {
+    color: var(--white);
+    text-decoration: none;
+}
 
 h2 {
-    font-size: 1.75em;
+    font-size: 1.5em;
     display  : inline;
+    font-family: var(--subheading-font);
+}
+h3 {
+    font-size: 1.15em;
+    margin   : 0.25em 1em;
     font-family: var(--subheading-font);
 }
 
@@ -163,16 +172,31 @@ img {
     text-shadow: 1px 1px 2px #000;
 }
 
-
+button a {
+    text-decoration: none;
+    color          : var(--dark-gray);
+    font-weight    : 800;
+}
 
 
 /* ----- TEXT ----- */
 p,
 small {
     font-size: 1em;
-    margin   : 1em auto;
+    margin   : .25em auto;
     padding  : 0.25em;
     max-width: 95%;
+}
+ul, ol {
+    margin : .5em 3em;
+    padding: 0.25em;
+    max-width: 95%;
+}   
+#cityCouncil ul, #zoningBoard ul, #commissioners ul, #planningCommission ul {
+    margin : .5em 1em;
+    padding-left: 1.5em;
+    font-size: 1em;
+    list-style: disc;
 }
 
 /* ----- MAIN/HEADER/FOOTER ----- */
@@ -198,12 +222,19 @@ main {
     background-color: var(--blue);
     margin: .5em 0;
 }
-
+ul.about-list {
+    margin : .5em 1em;
+    padding: 0.25em;
+    max-width: 95%;
+}
 ul.about-list li{
     list-style-type: disc;
-    margin-left     : 2em;
-    padding         : 0.5em 0;
+    padding         : 0;
 
+}
+li {
+    margin : 0.25em 0;
+    padding: 0.25em;
 }
 
 /* ---------- HIDDEN HEADING STYLES ---------- */
@@ -492,18 +523,18 @@ footer {
     header {
         height               : auto;
         display              : grid;
-        grid-template-columns: repeat(8, 1fr);
+        grid-template-columns: repeat(12, 1fr);
     }
 
     .title {
         font-family: var(--heading-font);
-        grid-column: 1/9;
+        grid-column: 1/12;
         grid-row   : 1/1;
         display    : inline;
     }
 
     .intro-text {
-        grid-column: 1/9;
+        grid-column: 1/6;
         grid-row   : 3/4;
         text-wrap  : wrap;
         display    : inline;
@@ -516,6 +547,33 @@ footer {
         display    : inline;
         margin     : 0 auto;
     }
+
+    #gov-contacts {
+        display     : inline-block;
+        position: absolute;
+        right: 5%;
+        top: 1em;
+        justify-content: right;
+        align-items : right;
+        grid-column : 9/12;
+        grid-row    : 1/1;
+        width: fit-content;
+    }
+    #gov-contacts button {
+        font-size       : 1.25em;
+        font-weight     : 800;
+        padding         : 0.5em;
+        border          : none;
+        outline         : none;
+        border-radius   : 0.2em;
+        background-color: var(--yellow);
+        color           : var(--dark-gray);
+        cursor          : pointer;
+        box-shadow      : 2px 2px 4px #000;
+    }
+
+
+
 nav,
 section {
     background-color: var(--blue);
@@ -568,11 +626,26 @@ img {
         margin: 0.25em 0;
         padding-left : 5%;
     }
-    #one {
-        grid-column: 1/13;
-        grid-row   : 1/1;
-        padding-right: 50px;
-    }
+    h1 {
+    font-size  : 2.5em;
+    margin     : 0.25em 0;
+}
+
+h2 {
+    font-size  : 1.75em;
+}
+
+h3 {
+    font-size  : 1.25em;
+    margin     : 0.25em 1em;
+
+}
+
+#one {
+    grid-column: 1/13;
+    grid-row   : 1/1;
+    padding-right: 50px;
+}
 
     #two {
         grid-column: 1 / span 5;
@@ -602,6 +675,28 @@ img {
     #seven {
         grid-column: 1/6;
         grid-row   : 8/10;
+    }
+
+    #cityCouncil {
+        margin-top: 25px;
+        grid-column: 1/7;
+        padding-right: 30px;
+    }
+    #zoningBoard {
+        margin-top: 25px;
+        grid-column: 7/13;
+        padding-right: 30px;
+    }
+    #commissioners {
+        margin-top: 25px;
+        grid-column: 1/6;
+        grid-row   : 7 / span 6;
+        padding-right: 30px;
+    }
+    #planningCommission {
+        margin-top: 25px;
+        grid-column: 6/13;
+        grid-row   : 7 / span 6;
     }
 
     #toggle,
@@ -779,6 +874,29 @@ img {
         margin-top: 50px; 
         margin-right: 60px;
     }
+    #cityCouncil {
+        grid-column  : 1/5;
+        padding-right: 30px;
+    }
+
+    #zoningBoard {
+        grid-column  : 5/9;
+        padding-right: 30px;
+    }
+
+    #commissioners {
+        grid-column  : 9/13;
+        grid-row     : 1 / span 2;
+        padding-right: 30px;
+    }
+
+    #planningCommission {
+        grid-column: 1/13;
+        grid-row   : 3/4;
+        grid-row-end: 7;
+        min-height  : fit-content;
+        margin-top: 5%;
+    }
 }
 
 @media screen and (min-width: 1535px) {
@@ -815,10 +933,12 @@ img {
 
 }
 @media screen  and (min-width: 1920px) {
-    #five, #six, #seven {
+    #five, #six, #seven{
         margin-top: 40%;
     }
-
+    #planningCommission {
+        margin-top: 5%;
+    }
 }
 /* --------------- END EXTRA LARGE SCREEN SIZES --------------- */
 
